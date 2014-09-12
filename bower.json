@@ -1,0 +1,22 @@
+{
+  "name": "corespring-radio",
+  "version": "0.0.0",
+  "homepage": "https://github.com/corespring/radio",
+  "authors": [
+    "benburton <benjamin.joseph.burton@gmail.com>"
+  ],
+  "description": "An AngularJS directive to replace input[type=radio] so that it can be styled across browsers.",
+  "main": "directive.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.12"
+  }
+}
