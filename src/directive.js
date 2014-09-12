@@ -54,7 +54,7 @@
         });
       }
       
-      function doNative($scope, $element, $attr) {
+      function simulateNativeRadio($scope, $element, $attr) {
         $element.click(function() {
           if (Radio.shouldCheck($element)) {
             $attr.$set('checked', 'checked');
@@ -94,7 +94,7 @@
       if (ctrls[0]) {
         ngModelLink($scope, $element, $attr, ctrls[0]);
       } else {
-        doNative($scope, $element, $attr);
+        simulateNativeRadio($scope, $element, $attr);
       }
     }
 
