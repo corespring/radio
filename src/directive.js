@@ -6,11 +6,11 @@
 
     var Radio = {
       CheckedEvent: 'radio.checked',
-      check: function($element) {
+      setCheckedView: function($element) {
         $element.attr('checked', 'checked');
         $element.find('.radio-toggle').addClass('checked');
       },
-      uncheck: function($element) {
+      setUncheckedView: function($element) {
         $element.removeAttr('checked');
         $element.find('.radio-toggle').removeClass('checked');
       },
@@ -23,11 +23,11 @@
       shouldCheck: function($element) {
         return (this.isEnabled($element) && !(this.isChecked($element)));
       },
-      enable: function($element) {
+      setEnabledView: function($element) {
         $element.removeAttr('disabled');
         $element.find('.radio-toggle').removeClass('disabled');
       },
-      disable: function($element) {
+      setDisabledView: function($element) {
         $element.attr('disabled', 'disabled');
         $element.find('.radio-toggle').addClass('disabled');
       }
@@ -38,7 +38,7 @@
       function ngModelLink($scope, $element, $attr, $ctrl) {
         $element.click(function() {
           if (Radio.shouldCheck($element)) {
-            Radio.check($element);
+            Radio.setCheckedView($element);
             $scope.$apply(function() {
               $ctrl.$setViewValue($attr.value);
             });
@@ -47,9 +47,9 @@
 
         $scope.$watch($attr.ngModel, function() {
           if (!angular.isDefined($ctrl.$viewValue) || $ctrl.$viewValue !== $attr.value) {
-            Radio.uncheck($element);
+            Radio.setUncheckedView($element);
           } else if ($ctrl.$viewValue === $attr.value) {
-            Radio.check($element);
+            Radio.setCheckedView($element);
           }
         });
       }
@@ -63,13 +63,13 @@
 
         $scope.$on(Radio.CheckedEvent, function(event, value) {
           if ($element.attr('value') !== value) {
-            Radio.uncheck($element);
+            Radio.setUncheckedView($element);
           }
         });
 
         $attr.$observe('checked', function() {
           if (Radio.isChecked($element)) {
-            Radio.check($element);
+            Radio.setCheckedView($element);
             $rootScope.$broadcast(Radio.CheckedEvent, $element.attr('value'));
           } else {
             Radio.uncheck(element);
@@ -78,18 +78,18 @@
 
         $attr.$observe('disabled', function() {
           if (Radio.isEnabled($element)) {
-            Radio.enable($element);
+            Radio.setEnabledView($element);
           } else {
-            Radio.disable($element);
+            Radio.setDisabledView($element);
           }
         });
       }
       
       if (Radio.isChecked($element)) {
-        Radio.check($element);
+        Radio.setCheckedView($element);
       }
       if (!Radio.isEnabled($element)) {
-        Radio.disable($element);
+        Radio.setDisabledView($element);
       }
       if (ctrls[0]) {
         ngModelLink($scope, $element, $attr, ctrls[0]);
