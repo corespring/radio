@@ -63,7 +63,7 @@
 
         $scope.$on(Radio.CheckedEvent, function(event, value) {
           if ($element.attr('value') !== value) {
-            Radio.setUncheckedViewA($element);
+            Radio.setUncheckedView($element);
           }
         });
 
