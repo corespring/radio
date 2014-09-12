@@ -54,8 +54,13 @@ This directive executes at priority level 0.
      Note that `ng-value="specialValue"` sets radio item's value to be the value of `$scope.specialValue`.
 
      
-### Testing
+## Testing
 
     npm install
     bower install
     grunt
+    
+    
+## License
+
+This library is distributed under the MIT License found in the provided [LICENSE](/LICENSE) file.
