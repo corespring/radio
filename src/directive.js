@@ -63,7 +63,7 @@
 
         $scope.$on(Radio.CheckedEvent, function(event, value) {
           if ($element.attr('value') !== value) {
-            Radio.setUncheckedView($element);
+            Radio.setUncheckedViewA($element);
           }
         });
 
@@ -100,7 +100,7 @@
 
     return {
       replace: true,
-      restrict: 'E',
+      restrict: 'AE',
       transclude: true,
       priority: 0,
       require: ['?ngModel'],
