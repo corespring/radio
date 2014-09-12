@@ -21,7 +21,7 @@
         return $element.attr('disabled') !== 'disabled';
       },
       shouldCheck: function($element) {
-        return (this.isEnabled($element) && !(this.isChecked(element)));
+        return (this.isEnabled($element) && !(this.isChecked($element)));
       },
       enable: function($element) {
         $element.removeAttr('disabled');
@@ -37,7 +37,7 @@
       
       function ngModelLink($scope, $element, $attr, $ctrl) {
         $element.click(function() {
-          if (Radio.shouldCheck(element)) {
+          if (Radio.shouldCheck($element)) {
             Radio.check($element);
             $scope.$apply(function() {
               $ctrl.$setViewValue($attr.value);
@@ -46,7 +46,7 @@
         });
 
         $scope.$watch($attr.ngModel, function() {
-          if (!angular.isDefined(ctrl.$viewValue) || $ctrl.$viewValue !== $attr.value) {
+          if (!angular.isDefined($ctrl.$viewValue) || $ctrl.$viewValue !== $attr.value) {
             Radio.uncheck($element);
           } else if ($ctrl.$viewValue === $attr.value) {
             Radio.check($element);

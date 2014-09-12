@@ -1,0 +1,19 @@
+{
+  "name": "corespring-radio",
+  "version": "0.0.1",
+  "description": "An AngularJS directive to replace input[type=radio] so that it can be styled across browsers.",
+  "author": "https://github.com/corespring/radio/contributors",
+  "license": "MIT",
+  "homepage": "http://github.com/corespring/radio",
+  "main": "src/directive.js",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-karma": "~0.4.4"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/corespring/radio"
+  }
+}
