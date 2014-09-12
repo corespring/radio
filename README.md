@@ -1,4 +1,4 @@
-## Corespring </radio> Directive
+## Corespring `</radio>` Directive
 
 A substitute for `input[type=radio]` that can be styled across all browsers.
 
