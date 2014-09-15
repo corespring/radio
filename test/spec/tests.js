@@ -2,7 +2,7 @@ describe('radio', function() {
 
   var compile, rootScope;
 
-  beforeEach(module('corespring.input'));
+  beforeEach(module('corespring.input.radio'));
 
   beforeEach(inject(function($compile, $rootScope) {
     compile = $compile;

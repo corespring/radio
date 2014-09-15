@@ -114,6 +114,6 @@
     }
   }
 
-  angular.module('corespring.input', []).directive('radio', ['$rootScope', Radio]);
+  angular.module('corespring.input.radio', []).directive('radio', ['$rootScope', Radio]);
   
 })();
