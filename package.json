@@ -11,7 +11,9 @@
     "grunt": "~0.4.1",
     "grunt-karma": "~0.4.4"
   },
-  "scripts": {},
+  "scripts": {
+    "test": "grunt"    
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/corespring/radio"

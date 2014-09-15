@@ -2,6 +2,9 @@
 
 A substitute for `input[type=radio]` that can be styled across all browsers.
 
+[![Build Status](https://travis-ci.org/corespring/radio.svg)](https://travis-ci.org/corespring/radio)
+
+
 ### Directive Info
 
 This directive executes at priority level 0.

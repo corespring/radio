@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+- '0.10'
+before_install:
+- npm install -g karma@canary phantomjs karma-phantomjs-launcher grunt-cli bower
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+install:
+- npm install
+- bower install
+notifications:
+  hipchat:
+    rooms:
+      secure: oZBNWRtpTrMVrMZrHeTc4CzyO3VlVg41kxFmQ8QwdiSjcPnkHrVBDaNW/dgl9CTFuOBqwaA2oW9TPTccD4ju10Lip3zZ15EUkLQriz/MiTBl8lY+rRmyfmVg0PYF56HmEO/l61jNMjnkQFRGhjS49e42q680qfRMrzb15+Xqloc=
+    template:
+      - '%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}'
