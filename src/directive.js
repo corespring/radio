@@ -72,7 +72,7 @@
             Radio.setCheckedView($element);
             $rootScope.$broadcast(Radio.CheckedEvent, $element.attr('value'));
           } else {
-            Radio.uncheck($element);
+            Radio.setUncheckedView($element);
           }
         });
 
